@@ -1,7 +1,7 @@
-# Timer App in Redux
+## Timer App in Redux
 You can add tasks, run them, pause them, and monitor the elapsed time of each running task and the total of the whole project.
 ### [Link to App in Heroku](https://timer-app-redux.herokuapp.com/)
-![image](https://user-images.githubusercontent.com/68274794/105644404-0ebc5780-5e9e-11eb-953b-908d500da981.png)
+![image](https://user-images.githubusercontent.com/68274794/105644537-b89be400-5e9e-11eb-81cd-2d0f21d3448b.png)
 
 
 In the project directory, you can run:
