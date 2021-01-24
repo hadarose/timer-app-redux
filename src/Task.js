@@ -8,12 +8,9 @@ function Task(props) {
     .substr(14, 5);
 
   const handleClick = () => {
-    console.log("what is active task? ", activeTask);
     if (activeTask === task.id) {
-      console.log("am i in the identical id if?");
       stopTimer();
     } else {
-      console.log("am i in different active task?");
       startTimer(task.id);
     }
   };
