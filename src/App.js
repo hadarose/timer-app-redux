@@ -10,6 +10,12 @@ function App() {
     store.dispatch(addTask(taskName));
   };
 
+  const handleKeyPress = (evt) => {
+    if (evt.key === "Enter") {
+      dispatchTask();
+    }
+  };
+
   return (
     <div className="App">
       <header className="App-header">
@@ -25,6 +31,7 @@ function App() {
                 type="text"
                 placeholder="Task Name"
                 onChange={(evt) => setTaskName(evt.target.value)}
+                onKeyPress={(e) => handleKeyPress(e)}
               />
             </div>
 

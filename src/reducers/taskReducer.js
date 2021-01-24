@@ -5,7 +5,7 @@ import {
   TICK,
 } from "../constants/actionTypes";
 
-let startId = 0;
+let startId = 1;
 const generateNewID = () => startId++;
 
 const initialState = {

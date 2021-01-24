@@ -5,7 +5,7 @@ function Tasks(props) {
   const { tasks, activeTask } = props;
 
   let totalTime = 0;
-  Object.values(tasks).map((task) => {
+  Object.values(tasks).forEach((task) => {
     totalTime += task.elapsedTime;
   });
 
