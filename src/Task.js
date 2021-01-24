@@ -3,7 +3,9 @@ import { connect } from "react-redux";
 
 function Task(props) {
   const { task, activeTask, stopTimer, startTimer } = props;
-
+  const elapsedTimeStr = new Date(task.elapsedTime * 1000)
+    .toISOString()
+    .substr(14, 5);
   return (
     <div className="flex-container" key={task.id}>
       <div className="flex-child">
@@ -13,11 +15,7 @@ function Task(props) {
       </div>
 
       <div className="flex-child">
-        <div className="timeDiv">
-          {task.elapsedTime
-            ? new Date(task.elapsedTime * 1000).toISOString().substr(14, 5)
-            : "00:00"}
-        </div>
+        <div className="timeDiv">{elapsedTimeStr}</div>
       </div>
 
       <div className="flex-child">
@@ -43,7 +41,6 @@ function Task(props) {
 const mapStateToProps = (state) => {
   return {
     tasks: state.tasks,
-    activeTask: state.activeTask,
   };
 };
 

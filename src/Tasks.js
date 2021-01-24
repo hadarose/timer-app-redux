@@ -1,13 +1,9 @@
 import { connect } from "react-redux";
 import Task from "./Task";
+import TotalTime from "./TotalTime";
 
 function Tasks(props) {
   const { tasks, activeTask } = props;
-
-  let totalTime = 0;
-  Object.values(tasks).forEach((task) => {
-    totalTime += task.elapsedTime;
-  });
 
   let todos = Object.values(tasks).map((task) => {
     return <Task task={task} key={task.id} />;
@@ -23,12 +19,7 @@ function Tasks(props) {
           : `Active task ID is ${activeTask}`}
       </div>
 
-      <div className="timeDiv">
-        Total elapsed time is{" "}
-        {totalTime === 0
-          ? "00:00"
-          : new Date(totalTime * 1000).toISOString().substr(14, 5)}
-      </div>
+      <TotalTime />
     </div>
   );
 }

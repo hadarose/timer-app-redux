@@ -63,6 +63,7 @@ input[type=text], select {
 
 .timeDiv {
   width: 100%;
+  max-width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
@@ -73,8 +74,8 @@ input[type=text], select {
 }
 
 .taskNameDiv {
-  width: 150px;
-  max-width: 150px;
+  width: 350px;
+  max-width: 350px;
   height: 65px;
   padding: 12px 20px;
   margin: 8px 0;
