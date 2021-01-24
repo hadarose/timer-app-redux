@@ -6,6 +6,17 @@ function Task(props) {
   const elapsedTimeStr = new Date(task.elapsedTime * 1000)
     .toISOString()
     .substr(14, 5);
+
+  const handleClick = () => {
+    console.log("what is active task? ", activeTask);
+    if (activeTask === task.id) {
+      console.log("am i in the identical id if?");
+      stopTimer();
+    } else {
+      console.log("am i in different active task?");
+      startTimer(task.id);
+    }
+  };
   return (
     <div className="flex-container" key={task.id}>
       <div className="flex-child">
@@ -19,16 +30,7 @@ function Task(props) {
       </div>
 
       <div className="flex-child">
-        <button
-          className="btn"
-          onClick={() => {
-            if (activeTask === task.id) {
-              stopTimer();
-            } else {
-              startTimer(task.id);
-            }
-          }}
-        >
+        <button className="btn" onClick={handleClick}>
           <i
             className={activeTask === task.id ? "fa fa-pause" : "fa fa-play"}
           ></i>
@@ -41,6 +43,7 @@ function Task(props) {
 const mapStateToProps = (state) => {
   return {
     tasks: state.tasks,
+    activeTask: state.activeTask,
   };
 };
 
