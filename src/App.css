@@ -37,22 +37,12 @@
   border-radius: 4px;
 }
 
-.addBtn {
-  background-color: deeppink;
-  border: none;
-  color: white;
-  padding: 12px 16px;
-  font-size: 16px;
-  cursor: pointer;
-  border-radius: 4px;
-}
-
 .btn:hover {
   background-color: lightpink;
 }
 
 input[type=text], select {
-  width: 100%;
+  width: 450px;
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
@@ -62,11 +52,21 @@ input[type=text], select {
 }
 
 .timeDiv {
-  width: 100%;
-  max-width: 100%;
+  width: 100px;
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  height: 65px;
+}
+
+.msgDiv {
+  width: 350px;
+  max-width: 350px;
+  padding: 12px 20px;
+  margin: 8px 0;
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;

@@ -13,7 +13,7 @@ function Tasks(props) {
     <div>
       <h2>Tasks:</h2>
       <div>{todos}</div>
-      <div className="timeDiv">
+      <div className="msgDiv">
         {activeTask === null
           ? "No Active Task"
           : `Active task ID is ${activeTask}`}

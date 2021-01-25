@@ -29,15 +29,14 @@ function App() {
             <div className="flex-child">
               <input
                 type="text"
-                placeholder="Task Name"
+                placeholder="Enter A New Task"
                 onChange={(evt) => setTaskName(evt.target.value)}
-                onKeyPress={(e) => handleKeyPress(e)}
+                onKeyPress={(evt) => handleKeyPress(evt)}
               />
+              <button className="btn" onClick={dispatchTask}>
+                Add
+              </button>
             </div>
-
-            <button className="addBtn" onClick={dispatchTask}>
-              Add
-            </button>
           </div>
 
           <Tasks />

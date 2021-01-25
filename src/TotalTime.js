@@ -8,7 +8,7 @@ function TotalTime(props) {
   });
 
   return (
-    <div className="timeDiv">
+    <div className="msgDiv">
       Total elapsed time is{" "}
       {new Date(totalTime * 1000).toISOString().substr(14, 5)}
     </div>
