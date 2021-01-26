@@ -4,9 +4,7 @@ import {
   STOP_TIMER,
   TICK,
 } from "../constants/actionTypes";
-
-let startId = 1;
-const generateNewID = () => startId++;
+import { generateNewID } from "../utils/generate-id";
 
 const initialState = {
   tasks: {},
@@ -31,6 +29,10 @@ const taskReducer = (state = initialState, action) => {
       return { ...state, activeTask: null };
 
     case TICK:
+      if (state.activeTask === null) {
+        return state;
+      }
+
       return {
         ...state,
         tasks: {

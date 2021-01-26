@@ -1,9 +1,8 @@
-import { startTimer, stopTimer } from "./actions/actions";
+import { startTimer, stopTimer } from "../actions/actions";
 import { connect } from "react-redux";
 
-function Task(props) {
-  const { task, activeTask, stopTimer, startTimer } = props;
-  const elapsedTimeStr = new Date(task.elapsedTime * 1000)
+function Task({ task, activeTask, stopTimer, startTimer }) {
+  const elapsedTime = new Date(task.elapsedTime * 1000)
     .toISOString()
     .substr(14, 5);
 
@@ -14,8 +13,9 @@ function Task(props) {
       startTimer(task.id);
     }
   };
+
   return (
-    <div className="flex-container" key={task.id}>
+    <div className="flex-container">
       <div className="flex-child">
         <div className="taskNameDiv">
           <b>{task.name}</b>
@@ -23,14 +23,14 @@ function Task(props) {
       </div>
 
       <div className="flex-child">
-        <div className="timeDiv">{elapsedTimeStr}</div>
+        <div className="taskTime">{elapsedTime}</div>
       </div>
 
       <div className="flex-child">
         <button className="btn" onClick={handleClick}>
           <i
             className={activeTask === task.id ? "fa fa-pause" : "fa fa-play"}
-          ></i>
+          />
         </button>
       </div>
     </div>
