@@ -53,7 +53,7 @@ input[type=text], select {
   box-sizing: border-box;
 }
 
-.taskTime{
+.task-time{
   width: 100px;
   padding: 12px 20px;
   margin: 8px 0;
@@ -75,7 +75,7 @@ input[type=text], select {
   height: 65px;
 }
 
-.taskNameDiv {
+.task-name {
   width: 350px;
   max-width: 450px;
   height: 65px;
@@ -90,7 +90,6 @@ input[type=text], select {
   resize: horizontal;
   white-space: nowrap;
 }
-
 
 
 

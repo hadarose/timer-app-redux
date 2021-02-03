@@ -1,7 +1,6 @@
 import { useState } from "react";
+import { addTask } from "../actions";
 import { connect } from "react-redux";
-import { addTask } from "../actions/actions";
-import Tasks from "./Tasks";
 
 function AddTask({ addTask }) {
   const [taskName, setTaskName] = useState("");
@@ -10,20 +9,16 @@ function AddTask({ addTask }) {
     addTask(taskName);
     event.preventDefault();
   };
-
   return (
-    <div>
-      <div className="flex-container">
-        <form onSubmit={dispatchTask}>
-          <input
-            type="text"
-            placeholder="Add A New Task"
-            onChange={(event) => setTaskName(event.target.value)}
-          />
-          <input type="submit" className="btn" value="Add" />
-        </form>
-      </div>
-      <Tasks />
+    <div className="flex-container">
+      <form onSubmit={dispatchTask}>
+        <input
+          type="text"
+          placeholder="Add A New Task"
+          onChange={(event) => setTaskName(event.target.value)}
+        />
+        <input type="submit" className="btn" value="Add" />
+      </form>
     </div>
   );
 }

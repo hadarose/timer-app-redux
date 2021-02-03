@@ -3,7 +3,7 @@ import {
   START_TIMER,
   STOP_TIMER,
   TICK,
-} from "../constants/actionTypes";
+} from "./constants/actionTypes";
 
 export const addTask = (name) => ({ type: ADD_TASK, name });
 

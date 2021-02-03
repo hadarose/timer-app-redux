@@ -1,4 +1,4 @@
-import { tick } from "../actions/actions";
+import { tick } from "../actions";
 
 let intervalHandle;
 export const intervalMiddleware = ({ dispatch }) => (next) => (action) => {

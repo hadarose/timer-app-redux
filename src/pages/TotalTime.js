@@ -1,14 +1,16 @@
 import { connect } from "react-redux";
-import _ from "lodash";
+import sum from "lodash/sum";
+import values from "lodash/values";
+
+const getTotalTime = (times) =>
+  new Date(sum(times) * 1000).toISOString().substr(14, 5);
 
 function TotalTime({ tasks }) {
-  let totalTime = new Date(
-    _.sum(_.values(tasks).map((task) => task.elapsedTime)) * 1000
-  )
-    .toISOString()
-    .substr(14, 5);
+  const times = values(tasks).map((task) => task.elapsedTime);
 
-  return <div className="message">Total elapsed time is {totalTime}</div>;
+  return (
+    <div className="message">Total elapsed time is {getTotalTime(times)}</div>
+  );
 }
 
 const mapStateToProps = (state) => {

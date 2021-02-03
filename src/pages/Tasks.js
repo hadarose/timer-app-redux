@@ -1,6 +1,5 @@
 import { connect } from "react-redux";
 import Task from "./Task";
-import TotalTime from "./TotalTime";
 
 function Tasks({ tasks, activeTask }) {
   const todos = Object.values(tasks).map((task) => (
@@ -13,9 +12,9 @@ function Tasks({ tasks, activeTask }) {
     <div>
       <h2>Tasks:</h2>
       <div>{todos}</div>
-      <div className="message">{message}</div>
-
-      <TotalTime />
+      <div>
+        <div className="message">{message}</div>
+      </div>
     </div>
   );
 }

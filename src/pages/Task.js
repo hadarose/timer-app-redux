@@ -1,4 +1,4 @@
-import { startTimer, stopTimer } from "../actions/actions";
+import { startTimer, stopTimer } from "../actions";
 import { connect } from "react-redux";
 
 function Task({ task, activeTask, stopTimer, startTimer }) {
@@ -9,21 +9,21 @@ function Task({ task, activeTask, stopTimer, startTimer }) {
   const handleClick = () => {
     if (activeTask === task.id) {
       stopTimer();
-    } else {
-      startTimer(task.id);
+      return;
     }
+    startTimer(task.id);
   };
 
   return (
     <div className="flex-container">
       <div className="flex-child">
-        <div className="taskNameDiv">
+        <div className="task-name">
           <b>{task.name}</b>
         </div>
       </div>
 
       <div className="flex-child">
-        <div className="taskTime">{elapsedTime}</div>
+        <div className="task-time">{elapsedTime}</div>
       </div>
 
       <div className="flex-child">
